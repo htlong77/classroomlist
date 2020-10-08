@@ -1,12 +1,11 @@
 import os
 # Creating .tex file from within python
 import sys
-subject = sys.argv[1]
-print(subject)
+script, subject, class_code, num_of_credits = sys.argv
 texfilename = "classlist.tex"
 fout = open(texfilename, "w")
 content = r"""\documentclass[a4paper, 12pt]{article}
-\usepackage[left=0.2cm, right=0.2cm, top=1cm, bottom=2.00cm]{geometry} %Set border
+\usepackage[left=0.2cm, right=0.2cm, top=1cm, bottom=2.00cm]{geometry} %%Set border
 \begin{document}
 \noindent\begin{minipage}[c]{10cm}
 \begin{center}
@@ -26,17 +25,17 @@ content = r"""\documentclass[a4paper, 12pt]{article}
 
 \noindent
 \begin{minipage}[c]{11cm}
- Học phần: \textbf{subject}\\
+ Học phần: \textbf{%s}\\
  Thứ: 4
 \end{minipage} 
 \hfill
 \begin{minipage}[c]{4.5cm}
- Lớp HP: \textbf{PHY1070 3}\\
+ Lớp HP: \textbf{%s}\\
  Tiết: 9-10
 \end{minipage} 
 \hfill
 \begin{minipage}[c]{4cm}
- Số tín chỉ: 2\\
+ Số tín chỉ: \textbf{%s}\\
  Giảng đường: 201-T5
 \end{minipage} 
 \vspace{0.2cm}
@@ -48,7 +47,7 @@ content = r"""\documentclass[a4paper, 12pt]{article}
   \hline
 \end{tabular}
 \end{document}
-"""
+""" % (subject, class_code, num_of_credits)
 fout.write(content)
 fout.close()
 
