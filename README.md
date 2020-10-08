@@ -13,6 +13,7 @@ Các kỹ năng, kỹ thuật trong dự án này là:
 Tinh thần: cái dễ làm trước lấy hứng thú làm tiếp cái khó sau.
 
 - Phần đưa .pdf được tạo ra lên Google Drive (GD) sẽ xử lý sau (tham khảo hướng dẫn của Hằng)
-
+*2020/10/08*
+- Creating .tex file from within python 
 *2020/10/01*
 - Dùng python để tạo .pdf từ .tex 
