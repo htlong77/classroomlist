@@ -15,6 +15,7 @@ Tinh thần: cái dễ làm trước lấy hứng thú làm tiếp cái khó sau
 - Phần đưa .pdf được tạo ra lên Google Drive (GD) sẽ xử lý sau (tham khảo hướng dẫn của Hằng)
 
 *2020/10/08*
+- Sửa tại local
 - Creating .tex file from within python 
 
 *2020/10/01*
