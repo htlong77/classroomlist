@@ -3,7 +3,8 @@ import os
 
 texfilename = "classlist.tex"
 fout = open(texfilename, "w")
-content = r"""\documentclass[a4paper,12pt]{book}
+content = r"""\documentclass[a4paper, 12pt]{article}
+\usepackage[left=0.2cm, right=1cm, top=1cm, bottom=2.00cm]{geometry} %Set border
 \begin{document}
 \centerline{\textbf{HỌC KỲ 1 2020-2021}}
 \begin{tabular}{*{9}{|c}|}
@@ -28,8 +29,8 @@ else:
     print(f'Creating "{pdffilename}" successfully!!!')
     
 # Viewing classlist.pdf
-cmd = "evince classlist.pdf &"
-#failure = os.system(cmd)
-#if failure:
-#    print('Viewing "classlist.pdf" failed!!!')
+cmd = f"evince {pdffilename} &"
+failure = os.system(cmd)
+if failure:
+    print(f'Viewing "{pdffilename}" failed!!!')
 
