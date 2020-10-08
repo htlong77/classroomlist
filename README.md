@@ -17,6 +17,7 @@ Tinh thần: cái dễ làm trước lấy hứng thú làm tiếp cái khó sau
 *2020/10/08*
 - Sửa tại local
 - Creating .tex file from within python 
+- Sửa từ trên github
 
 *2020/10/01*
 - Dùng python để tạo .pdf từ .tex 
