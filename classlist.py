@@ -66,3 +66,4 @@ failure = os.system(cmd)
 if failure:
     print(f'Viewing "{pdffilename}" failed!!!')
 
+# Thử lần cuối xem còn bị đưa classlist.tex lên không
