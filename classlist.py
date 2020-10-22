@@ -67,3 +67,4 @@ if failure:
     print(f'Viewing "{pdffilename}" failed!!!')
 
 # Thử lần cuối xem còn bị đưa classlist.tex lên không
+# Có vẻ đã giải quyết xong https://stackoverflow.com/questions/3833561/why-doesnt-git-ignore-my-specified-file/3833675#:~:text=gitignore%20files%20don't%20work,matching%20rules%20will%20be%20skipped.
