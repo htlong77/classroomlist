@@ -10,6 +10,13 @@ def import_student_data(filename):
     print(lines)
     for line in lines:
         print(line)
+        student_id, student_name, student_date_of_birth, student_training_program = line.split(',')
+        student_id = student_id.strip() 
+        student_name = student_name.strip()
+        student_date_of_birth = student_date_of_birth.strip()
+        student_training_program = student_training_program.strip()
+        print(f"Mã sinh viên '{student_id}', Họ và tên '{student_name}', Ngày sinh '{student_date_of_birth}', Chương trình đào tạo '{student_training_program}'")
+        
     datafile.close()
     return
 
