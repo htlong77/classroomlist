@@ -20,10 +20,11 @@ def import_student_data(filename):
     datafile.close()
     return
 
-script, subject, class_code, num_of_credits, day_of_week, class_hours, class_room = sys.argv
-texfilename = "classlist.tex"
-fout = open(texfilename, "w")
-content = r"""\documentclass[a4paper, 12pt]{article}
+def main():
+    script, subject, class_code, num_of_credits, day_of_week, class_hours, class_room = sys.argv
+    texfilename = "classlist.tex"
+    fout = open(texfilename, "w")
+    content = r"""\documentclass[a4paper, 12pt]{article}
 \usepackage[left=0.2cm, right=0.2cm, top=1cm, bottom=2.00cm]{geometry} %%Set border
 \begin{document}
 \noindent\begin{minipage}[c]{10cm}
@@ -67,26 +68,29 @@ content = r"""\documentclass[a4paper, 12pt]{article}
 \end{tabular}
 \end{document}
 """ % (subject, day_of_week, class_code, class_hours, num_of_credits, class_room)
-fout.write(content)
-fout.close()
+    fout.write(content)
+    fout.close()
 
 # Creating .pdf file from .tex file with xelatex
-cmd = f"xelatex {texfilename}"
-failure = os.system(cmd)
-pdffilename = f"{texfilename[0:-4]}.pdf"
-if failure:
-    print(f'Creating "{pdffilename}"  failed!!!')
-else:
-    print(f'Creating "{pdffilename}" successfully!!!')
+    cmd = f"xelatex {texfilename}"
+    failure = os.system(cmd)
+    pdffilename = f"{texfilename[0:-4]}.pdf"
+    if failure:
+        print(f'Creating "{pdffilename}"  failed!!!')
+    else:
+        print(f'Creating "{pdffilename}" successfully!!!')
     
 # Viewing classlist.pdf
-cmd = f"evince {pdffilename} &"
-failure = os.system(cmd)
-if failure:
-    print(f'Viewing "{pdffilename}" failed!!!')
-
+    cmd = f"evince {pdffilename} &"
+    failure = os.system(cmd)
+    if failure:
+        print(f'Viewing "{pdffilename}" failed!!!')
+    
 # Thử lần cuối xem còn bị đưa classlist.tex lên không
 # Có vẻ đã giải quyết xong https://stackoverflow.com/questions/3833561/why-doesnt-git-ignore-my-specified-file/3833675#:~:text=gitignore%20files%20don't%20work,matching%20rules%20will%20be%20skipped.
 
-filename = 'classlist.dat'
-import_student_data(filename)
+    filename = 'classlist.dat'
+    import_student_data(filename)
+
+if __name__ == '__main__':
+    main()
