@@ -21,7 +21,24 @@ def import_student_data(filename):
     return
 
 def main():
-    script, subject, class_code, num_of_credits, day_of_week, class_hours, class_room = sys.argv
+#    script, subject, class_code, num_of_credits, day_of_week, class_hours, class_room = sys.argv
+
+    # default values of input parameters:
+    subject = "Thực tập tin học vật lý"
+    class_code = "PHY3376 QTL"
+    num_of_credits = "2"
+    day_of_week = "5"
+    class_hours = "2-5"
+    class_room = "408-T5"
+# read variables from the command line, one by one:
+    while len(sys.argv) > 1:
+        option = sys.argv[1]; del sys.argv[1]
+        if option == '-s':
+            subject = sys.argv[1]; del sys.argv[1]
+        else:
+            print(f"{sys.argv[0]} : invalid option {option}")
+            sys.exit(1)
+#
     texfilename = "classlist.tex"
     fout = open(texfilename, "w")
     content = r"""\documentclass[a4paper, 12pt]{article}
